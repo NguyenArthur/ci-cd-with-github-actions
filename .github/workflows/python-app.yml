@@ -23,14 +23,12 @@ jobs:
       run: docker run my-flask-app python endToEnd-test.py
 
     - name: Log in to Docker Hub
-      if: github.ref == 'refs/heads/main'
       uses: docker/login-action@v1
       with:
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
     - name: Push Image to Docker Hub
-      if: github.ref == 'refs/heads/main'
       run: |
         docker tag my-flask-app ${{ secrets.DOCKER_HUB_USERNAME }}/my-flask-app:latest
         docker push ${{ secrets.DOCKER_HUB_USERNAME }}/my-flask-app:latest
