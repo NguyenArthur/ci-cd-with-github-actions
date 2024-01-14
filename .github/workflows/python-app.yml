@@ -37,7 +37,7 @@ jobs:
         run: python -m unittest discover integration_test
 
       - name: Stop docker
-        run: docker stop $(docker ps -q --filter ancestor=mflask-app )
+        run: docker stop $(docker ps -q --filter ancestor=flask-app )
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
