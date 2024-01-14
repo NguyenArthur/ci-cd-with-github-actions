@@ -20,10 +20,10 @@ jobs:
       run: docker run -d -p 5000:5000 my-flask-app
     
     - name: Run unit tests
-      run: python -m unittest unit-test.py
+      run: python -m unittest discorver unit-test
 
     - name: Run integration tests
-      run: python -m unittest endToEnd-test.py
+      run: python -m unittest discover integration-test
 
     - name: Stop docker
       run: docker stop $(docker ps -q --filter ancestor=cesarombredane/ci-cd-with-github-actions )
