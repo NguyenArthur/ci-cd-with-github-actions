@@ -26,7 +26,7 @@ jobs:
       run: python -m unittest discover integration-test
 
     - name: Stop docker
-      run: docker stop $(docker ps -q --filter ancestor=cesarombredane/ci-cd-with-github-actions )
+      run: docker stop $(docker ps -q --filter ancestor=my-flask-app )
 
     - name: Log in to Docker Hub
       uses: docker/login-action@v1
