@@ -49,7 +49,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: mrykse/ci_cd
+          images: flask-app
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
